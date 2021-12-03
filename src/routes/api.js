@@ -16,18 +16,17 @@ const router = express.Router()
  * @param {*} app from express framework
  */
 const initAPIs = (app) => {
-  // Gọi ra trang chủ home page
+
   router.get('/', getHomePage)
 
-  // Trang login
   router.get('/login', getLoginPage)
   router.post('/login', postLogin)
 
-  // Trang bật tính năng bảo mật 2 lớp
+
   router.get('/enable-2fa', getEnable2FAPage)
   router.post('/enable-2fa', postEnable2FA)
 
-  // Trang yêu cầu xác thực 2 lớp
+
   router.get('/verify-2fa', getverify2FAPage)
   router.post('/verify-2fa', postVerify2FA)
 
