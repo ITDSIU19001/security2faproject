@@ -64,7 +64,7 @@
 			background: #20bf6b !important;
 			color: white !important;
 			position: relative;
-			-webkit-transition-duration: 0.4s; /* Safari */
+			-webkit-transition-duration: 0.4s; 
 			transition-duration: 0.4s;
 			overflow: hidden;
 		}
@@ -120,10 +120,10 @@
 					const username = $('#username').val()
 					const password = $('#password').val()
 
-					// Gọi tới api login
+	
 					const result = await axios.post('/login', { username, password })
 
-					// Nếu sai thông tin tài khoản
+
 					if (!result.data.isCorrectIdentifier) {
 						Swal.fire({
 							icon: 'error',
@@ -134,7 +134,7 @@
 						})
 						return
 					}
-					// Nếu đúng thông tin tài khoản và tài khoản chưa bật xác thực 2 lớp
+
 					if (result.data.isLoggedIn && !result.data.is2FAEnabled) {
 						Swal.fire({
 							icon: 'success',
@@ -144,7 +144,7 @@
 						})
 						return
 					}
-					// Nếu tài khoản yêu cầu xác thực 2 lớp, sẽ hiện thông báo sau đó redirect qua trang verify
+
 					if (result.data.is2FAEnabled) {
 						Swal.fire({
 							icon: 'success',

@@ -116,12 +116,12 @@
 		$(document).ready(() => {
 			$('#verify-2fa').bind('click', async () => {
 				try {
-					// Lưu ý tuy rằng chuỗi token trông giống dãy số nhưng chúng ta sẽ phải đẩy nó lên dạng string nhé
+
 					const otpToken = $('#otp-token').val()
-					// Gọi tới api kiểm tra mã OTP
+
 					const result = await axios.post('/verify-2fa', { otpToken })
 
-					// Nếu token sai
+
 					if (!result.data.isValid) {
 						Swal.fire({
 							icon: 'error',
@@ -132,7 +132,7 @@
 						})
 						return
 					}
-					// Ngược lại, nếu đúng token thì sẽ verify thành công.
+
 					if (result.data.isValid) {
 						Swal.fire({
 							icon: 'success',
